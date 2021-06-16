@@ -34,17 +34,18 @@ public:
     void handleReceivedCallAccept(common::PhoneNumber from) override;
     void handleReceivedCallReject(common::PhoneNumber from) override;
     void handleReceivedCallTalk(const std::string &text)override;
+    void handleUnknownRecipientSMS()override;
+    void handleUnknownRecipient() override;
     //IUserEventsHandler
     void handleViewSmsList() override;
     void handleSingleSms(int messageIndex) override;
     void handleSendSms(SMS sendingSMS) override;
     void handleNewSms(SMS sms) override;
-    void handleUnknownRecipient() override;
     void handleMenuList(unsigned selectionIndex) override;
 
-    void handleSendCallAccepted(common::PhoneNumber from) override;//done Test
-    void handleSendCallDropped(common::PhoneNumber from) override;//done Test
-    void handleSendCallRequest(common::PhoneNumber to) override;//done Test
+    void handleSendCallAccepted(common::PhoneNumber from) override;
+    void handleSendCallDropped(common::PhoneNumber from) override;
+    void handleSendCallRequest(common::PhoneNumber to) override;
     void handleSendCallTalk(common::PhoneNumber to, const std::string &msg) override;
 private:
     Context context;
